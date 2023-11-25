@@ -1,0 +1,34 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from './Checkout';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe('pk_test_51ODONdEwiGG5e6noaAH3VuTBJOjFwZsytkyYw1UJkyT0Mj4aa2aFeqcQrjOvyX6Ww38DGr9XKMUOuj2bO4upqEhK00AMf6aISv');
+
+export default function StripeProcessing() {
+
+  const client = new URLSearchParams(window.location.search).get(
+    "payment_intent_client_secret")
+
+
+  const appearance = {
+    theme: 'stripe',
+    variables: {
+      colorPrimary: '#29ab87',
+      colorText: '#320f4e',
+    },
+  };
+  const options = {
+    // passing the client secret obtained from the server
+    clientSecret: client,
+    appearance
+  };
+  return (
+    <Elements stripe={stripePromise} options={options}>
+      <CheckoutForm />
+    </Elements>
+  );
+};

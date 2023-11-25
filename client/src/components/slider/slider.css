@@ -1,0 +1,37 @@
+.slidercontainer {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: inherit;
+}
+.sliderwrapper {
+  transition: all 300ms ease-in-out;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+}
+.arrowcontainer {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+  gap: 20px;
+  color: white;
+  bottom: 135px;
+  width: 100%;
+  cursor: pointer;
+  /* left: 0;
+  right: 0; */
+  
+  margin: 20px auto;
+}
+
+.arrow {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  color: black;
+}
+.slidercontent {
+  height: 100%;
+}

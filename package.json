@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "concurrently \" npm run dev --prefix server \"  \"npm run dev --prefix client\"",
+    "admin": "concurrently \" npm run dev --prefix server \"  \"npm run dev --prefix admin\" \"npm run dev --prefix client\"",
+    "init-install": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "moment": "^2.29.4"
+  }
+}
