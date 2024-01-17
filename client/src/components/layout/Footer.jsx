@@ -46,7 +46,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <p className="footer__copy">&#169; 2022 Annageldiyeva Leyli. Bon Appetite</p>
+            {/* <p className="footer__copy">&#169; 2022 Annageldiyeva Leyli. Bon Appetite</p> */}
         </footer>
   );
 };
